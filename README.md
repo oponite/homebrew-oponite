@@ -1,18 +1,22 @@
-# homebrew-lana
+# homebrew-oponite
 
-Homebrew tap for [Lana](https://github.com/oponite/lana) — a programming language for uncertainty computation.
+Homebrew tap for my builds.
 
-## Install
+| Formula | What it does | Install |
+|---------|--------------|---------|
+| `lana` | (short description of Lana) | `brew install lana` |
+| `pls`  | Precise‑Lean‑Streamlined reasoning tool | `brew install pls` |
+
+
+Add the tap once:
 
 ```bash
-brew tap oponite/lana
-brew install lana
+brew tap oponite/oponite
 ```
 
-The formula builds Lana from the signed release source tarball (Apache-2.0). macOS arm64 and Intel are both supported; there are no prebuilt bottles, so the first install compiles from source.
-
-## Verify
+Then install whichever you need: 
 
 ```bash
-lana version   # -> Lana 2.1.0 (LABC v2, ...)
+brew install lana
+brew install pls
 ```
