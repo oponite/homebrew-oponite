@@ -1,14 +1,12 @@
 class Lana < Formula
   desc "Verified register-based language with explicit uncertainty"
   homepage "https://github.com/oponite/lana"
-  url "https://github.com/oponite/lana/releases/download/v2.1.0/lana-2.1.0-source.tar.gz"
-  sha256 "dbdf5b3ba4e1dbfea144150c13d9328b24884ff1458835a60f4a0ac2d539df08"
+  url "https://github.com/oponite/lana/releases/download/v3.0.1/lana-3.0.1-source.tar.gz"
+  sha256 "04e0d928083a31f8f32d7e3212f2fdb9c82a65f5726cd9f211383a1b267d4733"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
-  depends_on "pkgconf" => :build
-  depends_on "libffi"
-  depends_on "openssl@3"
+  depends_on "rust" => :build
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
