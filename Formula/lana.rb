@@ -1,24 +1,15 @@
 class Lana < Formula
   desc "Verified register-based language with explicit uncertainty"
   homepage "https://github.com/oponite/lana"
-  url "https://github.com/oponite/lana/releases/download/v3.0.1/lana-3.0.1-source.tar.gz"
-  sha256 "04e0d928083a31f8f32d7e3212f2fdb9c82a65f5726cd9f211383a1b267d4733"
+  url "https://github.com/oponite/lana/releases/download/v4.0.0/lana-4.0.0-source.tar.gz"
+  sha256 "9dbe5f76f6a971c4065d157b5f3e4ec9bdd5c3292583f729bd9a34f61663c4d5"
   license "Apache-2.0"
 
-  depends_on "cmake" => :build
+  depends_on "python@3.14" => :build
   depends_on "rust" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-    system "cmake", "--build", "build", "--parallel"
-    system "cmake", "--install", "build"
-    libexec.install bin/"lana-compiler.labc"
-    (bin/"lana").rename bin/"lana-bin"
-    (bin/"lana").write <<~EOS
-      #!/bin/sh
-      export LANA_COMPILER_LABC="#{libexec}/lana-compiler.labc"
-      exec "#{bin}/lana-bin" "$@"
-    EOS
+    system "python3", "tools/build.py", "install", "--prefix", prefix
   end
 
   test do
