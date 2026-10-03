@@ -1,8 +1,8 @@
 class Lana < Formula
   desc "Verified register-based language with explicit uncertainty"
   homepage "https://github.com/oponite/lana"
-  url "https://github.com/oponite/lana/releases/download/v4.0.0/lana-4.0.0-source.tar.gz"
-  sha256 "9dbe5f76f6a971c4065d157b5f3e4ec9bdd5c3292583f729bd9a34f61663c4d5"
+  url "https://github.com/oponite/lana/releases/download/v4.1.0/lana-4.1.0-source.tar.gz"
+  sha256 "792f066b4b8f62577494e55f1e385331c0597c109d6ca74508debdc40f688c89"
   license "Apache-2.0"
 
   depends_on "python@3.14" => :build
